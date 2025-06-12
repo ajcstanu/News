@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌍 World News Today</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e90ff;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    article {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    article:hover {
+      transform: scale(1.02);
+    }
+
+    article img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .article-content {
+      padding: 15px;
+    }
+
+    .article-content h2 {
+      font-size: 1.1rem;
+      margin: 0 0 10px;
+    }
+
+    .article-content p {
+      font-size: 0.95rem;
+    }
+
+    .article-content a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      background: #1e90ff;
+      color: white;
+      padding: 1rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌍 World News Today</h1>
+  </header>
+
+  <main id="news-container">
+    <p>Loading news...</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 World News Today</p>
+  </footer>
+
+  <script>
+    const apiKey = "39dc0dfbc6794a89850b63cb2affc089";
+    const newsContainer = document.getElementById("news-container");
+
+    async function fetchNews() {
+      try {
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?language=en&pageSize=20&apiKey=${apiKey}`);
+        const data = await response.json();
+
+        if (data.status === "ok") {
+          newsContainer.innerHTML = "";
+          data.articles.forEach(article => {
+            const newsItem = document.createElement("article");
+            newsItem.innerHTML = `
+              <img src="${article.urlToImage || 'https://via.placeholder.com/400x200'}" alt="News Image">
+              <div class="article-content">
+                <h2>${article.title}</h2>
+                <p>${article.description || ''}</p>
+                <a href="${article.url}" target="_blank">Read more</a>
+              </div>
+            `;
+            newsContainer.appendChild(newsItem);
+          });
+        } else {
+          newsContainer.innerHTML = `<p>Failed to fetch news. Try again later.</p>`;
+        }
+      } catch (error) {
+        console.error(error);
+        newsContainer.innerHTML = `<p>Error loading news.</p>`;
+      }
+    }
+
+    fetchNews();
+  </script>
+</body>
+</html>
