@@ -57,6 +57,3 @@ world-news-today/
 * Add dark mode toggle
 * Add search functionality
 * Deploy to GitHub Pages or Netlify
-
-
-```
