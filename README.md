@@ -7,14 +7,14 @@ A simple and attractive web application that displays the latest world news head
 
 ![screenshot](https://via.placeholder.com/1000x400?text=World+News+Today) <!-- Replace with real screenshot if available -->
 
-## 📰 Features
+##  Features
 
 - Fetches live news headlines from NewsAPI
 - Responsive and mobile-friendly design
 - Displays title, image, description, and link to full articles
 - Clean, modern user interface
 
-## 🚀 Live Demo
+##  Live Demo
 
 You can open the `index.html` file in your browser to view the app locally.
 
