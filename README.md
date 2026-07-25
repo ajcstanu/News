@@ -1,7 +1,7 @@
-### 📄 `README.md`
+###  `README.md`
 
 ````markdown
-# 🌍 World News Today
+#  World News Today
 
 A simple and attractive web application that displays the latest world news headlines using the NewsAPI.
 
@@ -18,7 +18,7 @@ A simple and attractive web application that displays the latest world news head
 
 You can open the `index.html` file in your browser to view the app locally.
 
-## 🛠️ Setup Instructions
+##  Setup Instructions
 
 1. **Clone or Download** the project:
    ```bash
@@ -43,7 +43,7 @@ This app uses [NewsAPI.org](https://newsapi.org/) to fetch news articles. You'll
 const apiKey = "YOUR_API_KEY_HERE"; // Replace this with your actual key
 ```
 
-## 🧩 File Structure
+##  File Structure
 
 ```
 world-news-today/
@@ -51,7 +51,7 @@ world-news-today/
 ├── README.md      # This readme file
 ```
 
-## ✨ Future Enhancements
+##  Future Enhancements
 
 * Filter news by category (e.g., technology, sports)
 * Add dark mode toggle
