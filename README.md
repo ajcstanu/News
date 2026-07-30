@@ -30,8 +30,8 @@ You can open the `index.html` file in your browser to view the app locally.
    ```bash
    open index.html
    ```
-
-## 🔑 API Key
+________________________________________________________________________________________________________________
+##  API Key
 
 This app uses [NewsAPI.org](https://newsapi.org/) to fetch news articles. You'll need a valid API key:
 
